@@ -1,0 +1,11 @@
+void main() 
+{ 
+  int count = 9;           
+  bool flag = true;         
+  double marks = 55.78; 
+  String name = 'Amar';   
+  var hai = "Good Morning";   
+
+  print("$hai! My name is $name with aggregate $marks"); 
+  print("flag is $flag and count is $count"); 
+} 

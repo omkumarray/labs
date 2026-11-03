@@ -1,0 +1,23 @@
+void main() { 
+  
+  bool a = true; 
+  bool b = false; 
+  
+  // logical AND (&&) 
+  print('a && b = ${a && b}'); 
+  
+  // logical OR (||) 
+  print('a || b = ${a || b}'); 
+  
+  // logical NOT (!) 
+  print('!a = ${!a}'); 
+  print('!b = ${!b}'); 
+  
+  // combining expressions 
+  int x = 10; 
+  int y = 20; 
+  print('(x > 5) && (y > 30) = ${(x > 5) && (y > 30)}'); 
+  print('(x > 5) && (y < 30) = ${(x > 5) && (y < 30)}'); 
+  print('(x < 5) && (y < 30) = ${(x < 5) && (y < 30)}'); 
+  print('(x < 5) || (y > 15) = ${(x < 5) || (y > 15)}'); 
+} 

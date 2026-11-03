@@ -1,0 +1,74 @@
+import 'package:flutter/material.dart'; 
+void main()  
+{ 
+ runApp(MyResponsiveApp()); 
+} 
+class MyResponsiveApp extends StatelessWidget { 
+  @override 
+  Widget build(BuildContext context) { 
+    return MaterialApp( 
+      title: 'Responsive UI', 
+      theme: ThemeData(primarySwatch: Colors.blue), 
+      home: ResponsiveHomePage(), 
+    ); 
+  } 
+} 
+class ResponsiveHomePage extends StatelessWidget { 
+  @override
+  Widget build(BuildContext context) { 
+    return Scaffold( 
+      appBar: AppBar(title: Text('Responsive UI Example')), 
+      body: LayoutBuilder( 
+        builder: (context, constraints) { 
+          if (constraints.maxWidth < 600) { 
+            //Small screen: use vertical layout 
+            return _buildVerticalLayout(); 
+          } else { 
+            //Large screen: use horizontal layout 
+            return _buildHorizontalLayout(); 
+          } 
+        }, 
+      ), 
+    ); 
+  } 
+ 
+  //Mobile View 
+  Widget _buildVerticalLayout() { 
+    return Column( 
+      children: [ 
+        _buildBox(Colors.red, 'Box 1'), 
+        SizedBox(height: 10), 
+        _buildBox(Colors.green, 'Box 2'), 
+        SizedBox(height: 10), 
+        _buildBox(Colors.blue, 'Box 3'), 
+      ], 
+    ); 
+  } 
+ 
+  //        Tablet/Desktop View 
+  Widget _buildHorizontalLayout() { 
+    return Row( 
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
+      children: [ 
+        Flexible(child: _buildBox(Colors.red, 'Box 1')), 
+        Flexible(child: _buildBox(Colors.green, 'Box 2')), 
+        Flexible(child: _buildBox(Colors.blue, 'Box 3')), 
+      ], 
+    ); 
+  } 
+ 
+  // Reusable UI block 
+  Widget _buildBox(Color color, String label) { 
+    return Container( 
+      height: 150, 
+      margin: EdgeInsets.all(8), 
+      color: color,
+       child: Center( 
+        child: Text( 
+          label, 
+          style: TextStyle(fontSize: 22, color: Colors.white), 
+        ), 
+      ), 
+    ); 
+  } 
+} 

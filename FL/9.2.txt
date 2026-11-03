@@ -1,0 +1,13 @@
+import 'dart:io'; 
+void main() { 
+  print('Enter age, height, and name :'); 
+  // Take a line of input, split by spaces, store as List<String> 
+  List<String> inputs = stdin.readLineSync()!.split(' '); 
+  // Convert to proper data types 
+  int age = int.parse(inputs[0]);       // First input → int 
+  double height = double.parse(inputs[1]);   // Second input → double 
+  String name = inputs[2];              // Third input → String 
+ 
+  // Print values 
+  print('Age: $age, Height: $height, Name: $name'); 
+}
